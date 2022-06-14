@@ -10,8 +10,8 @@ import os
 app = Flask(__name__, template_folder="templates")
 
 # Read data in CSV file
-df = pd.read_csv("C:/Users/School/Desktop/nhakkarainen/Projects/NU-Project-4/Heroku/resources/titanic.csv")
-df.to_csv("C:/Users/School/Desktop/nhakkarainen/Projects/NU-Project-4/Heroku/resources/titanic.csv", index = None)
+df = pd.read_csv("C:/Users/School/Desktop/nhakkarainen/titanic_survivors/resources/titanic.csv")
+df.to_csv("C:/Users/School/Desktop/nhakkarainen/titanic_survivors/resources/titanic.csv", index = None)
 
 # Flask routes
 @app.route("/")
@@ -23,16 +23,16 @@ def Homepage():
 @app.route("/api/v1.0/dataset")
 def dataset():
     # Read CSV and convert to HTML table
-    data = pd.read_csv("C:/Users/School/Desktop/nhakkarainen/Projects/NU-Project-4/Heroku/resources/titanic.csv")
+    data = pd.read_csv("C:/Users/School/Desktop/nhakkarainen/titanic_survivors/resources/titanic.csv")
     return render_template("table.html", tables = [data.to_html()], titles = [""])
 
 # APP ROUTE 2 - SHOW PROBABILITY OF SURVIVAL
 @app.route("/api/v1.0/survival")
 def survival():
     # Read File and store into Pandas data frame
-    titanic_df = pd.read_csv("C:/Users/School/Desktop/nhakkarainen/Projects/NU-Project-4/Heroku/resources/titanic.csv")
-    test_df = pd.read_csv("C:/Users/School/Desktop/nhakkarainen/Projects/NU-Project-4/Heroku/resources/titanic.csv")
-    train_df = pd.read_csv("C:/Users/School/Desktop/nhakkarainen/Projects/NU-Project-4/Heroku/resources/titanic.csv")
+    titanic_df = pd.read_csv("C:/Users/School/Desktop/nhakkarainen/titanic_survivors/resources/titanic.csv")
+    test_df = pd.read_csv("C:/Users/School/Desktop/nhakkarainen/titanic_survivors/resources/titanic.csv")
+    train_df = pd.read_csv("C:/Users/School/Desktop/nhakkarainen/titanic_survivors/resources/titanic.csv")
 
     # Clean datasets
     titanic_df["Sex"] = titanic_df["Sex"].apply(lambda x: 1 if x == "female" else 0)
