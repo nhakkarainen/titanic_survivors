@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Charts & Visualizations</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-4">Charts and Visualizations</h1>
+      <p class="lead">A closer look at passenger features as an predictor of survival.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+        <h2>Survival by Gender</h2>
+        <div class="thumbnail">
+            <img src="{{url_for('static', filename='age_1.png')}}", class = "img-fluid"/>
+        </div>
+    </div>
+    <hr class="my-4">
+  </div>  
+
+  <div class="container">
+    <hr class="my-4">
+    <div class="row">
+        <h2>Survival by Age & Gender</h2>
+        <div class="thumbnail">
+            <img src="{{url_for('static', filename='age_gender_1.png')}}", class = "img-fluid"/>
+        </div>
+    </div>
+    <hr class="my-4">
+  </div>  
+
+  <div class="container">
+      <div class="row">
+          <div class="col-md-6">
+            <h2> Survival by Gender</h2>
+            <div class="card">
+              <img src="{{url_for('static', filename='gender_1.png')}}", class = "img-fluid"/>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h2> Survival by Passenger Class</h2>
+              <div class="card">
+                <img src="{{url_for('static', filename='pclass_1.png')}}", class = "img-fluid"/>
+              </div>
+          </div>
+      </div>
+  </div>
+
+</body>
+
+</html>
